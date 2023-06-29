@@ -74,7 +74,7 @@ export const FloatingPopover = () => {
                                           <th className="pl-2 text-blueGray-700 w-2/6 border-l-0 border-r-0 border-t-0 py-3 text-left align-top text-xs">
                                             {key}
                                           </th>
-                                          <td className="max-w-3xl whitespace-normal break-words border-l-0 border-r-0 border-t-0 align-middle text-xs ">
+                                          <td className="max-w-3xl whitespace-normal break-words border-l-0 border-r-0 border-t-0 align-middle text-left text-xs ">
                                               {typeof value === 'object' ?  <JSONPretty
                                                   data={JSON.stringify(value)}
                                               ></JSONPretty> : value}
