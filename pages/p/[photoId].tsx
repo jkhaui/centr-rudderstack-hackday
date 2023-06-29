@@ -6,6 +6,7 @@ import getResults from '../../utils/cachedImages'
 import cloudinary from '../../utils/cloudinary'
 import getBase64ImageUrl from '../../utils/generateBlurPlaceholder'
 import type { ImageProps } from '../../utils/types'
+import {useEffect} from "react";
 
 const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const router = useRouter()
@@ -14,6 +15,10 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
 
   const currentPhotoUrl = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560/${currentPhoto.public_id}.${currentPhoto.format}`
 
+  useEffect(()=>{
+    console.log(photoId)
+  },[photoId])
+
   return (
     <>
       <Head>
@@ -21,9 +26,9 @@ const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
         <meta property="og:image" content={currentPhotoUrl} />
         <meta name="twitter:image" content={currentPhotoUrl} />
       </Head>
-      {/*<main className="mx-auto max-w-[1960px] p-4">*/}
-      {/*  <Carousel currentPhoto={currentPhoto} index={index} />*/}
-      {/*</main>*/}
+      <main className="mx-auto max-w-[1960px] p-4">
+        <Carousel currentPhoto={currentPhoto} index={index} />
+      </main>
     </>
   )
 }

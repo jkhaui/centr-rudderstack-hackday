@@ -8,12 +8,12 @@ import JSONPretty from "react-json-pretty";
 import JSONPrettyMon from "react-json-pretty/dist/monikai";
 import { Fragment } from "react";
 
-export const FloatingPopover = ({ data, analyticsEvent, analyticsPayload }) => {
+export const FloatingPopover = () => {
   const events = useAnalyticsStore((state) => state.events);
 
   return (
-    <div className="fixed top-2 w-full max-w-sm px-4" style={{ zIndex: 2000 }}>
-      <Popover className="relative">
+    <div className="fixed top-8 right-4 w-full max-h-[500px] max-w-sm px-4" style={{ zIndex: 2000 }}>
+      <Popover className="relative text-right">
         {({ open }) => (
           <>
             <Popover.Button
@@ -21,7 +21,7 @@ export const FloatingPopover = ({ data, analyticsEvent, analyticsPayload }) => {
                 ${open ? "" : "text-opacity-90"}
                 group inline-flex items-center rounded-md bg-orange-700 px-3 py-2 text-base font-medium text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <span>Analytics</span>
+              <span>See Analytics events</span>
             </Popover.Button>
             <Transition
               as={Fragment}
@@ -32,9 +32,9 @@ export const FloatingPopover = ({ data, analyticsEvent, analyticsPayload }) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="relative z-10 mt-3 w-screen max-w-xl px-4">
-                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                  <div className="relative flex flex-col gap-2 bg-white p-7 lg:grid-cols-2">
+              <Popover.Panel className="relative  right-3/4 z-10 mt-3 w-screen max-h-[500px] max-w-xl px-4">
+                <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div className="relative max-h-[500px] rounded-2xl overflow-auto flex flex-col gap-2 bg-white p-7 lg:grid-cols-2">
                     {events &&
                       events.length > 0 &&
                       events.map((event, idx) => (
