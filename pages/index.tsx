@@ -19,7 +19,7 @@ const DEFAULT_ANALYTICS_PAYLOAD = {
   currency: "USD",
   user_actual_id: 12345
 };
-c14d45b4-c4e0-4539-9e32-08561ef2fd21
+
 const Home: NextPage = ({ images, rudder }: { images: ImageProps[], rudder: any }) => {
   const router = useRouter()
   const { photoId } = router.query
