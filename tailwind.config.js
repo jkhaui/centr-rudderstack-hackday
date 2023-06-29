@@ -8,6 +8,10 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  safelist: [
+      'bg-lime-500',
+      'bg-red-500'
+  ],
   theme: {
     extend: {
       boxShadow: {
