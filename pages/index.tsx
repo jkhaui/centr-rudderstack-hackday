@@ -15,6 +15,7 @@ import {FloatingPopover} from "../components/FloatingPopover";
 
 const PAGE_LOAD_EVENT = 'Page loaded';
 const DEFAULT_ANALYTICS_PAYLOAD = {
+  firstName: 'Jordy',
   revenue: 30,
   currency: "USD",
   user_actual_id: 12345
