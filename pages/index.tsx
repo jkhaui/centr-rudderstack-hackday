@@ -39,17 +39,23 @@ const Home: NextPage = ({
   const { photoId } = router.query;
   const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
 
+  const isIdentifiedRef = useRef(false);
+
   const [analyticsEvent, setAnalyticsEvent] = useState(PAGE_LOAD_EVENT);
   const [analyticsPayload, setAnalyticsPayload] = useState(
     DEFAULT_ANALYTICS_PAYLOAD
   );
 
   useEffect(() => {
-    rudder.identify("CC4FA6EE-0796-442A-883E-499AC6B495A0", {
-      firstName: "Joshua",
-      lastName: "Hayes",
-      email: "joshua@somedomain.com",
-    });
+    if (!isIdentifiedRef.current) {
+      rudder.identify("CC4FA6EE-0796-442A-883E-499AC6B495A0", {
+        firstName: "Joshua",
+        lastName: "Hayes",
+        email: "joshua@somedomain.com",
+      }, () => {
+        isIdentifiedRef.current = false;
+      });
+  }
 
     rudder.track("rudder_custom_test_event", {
       ...analyticsPayload,
