@@ -95,7 +95,7 @@ const Home: NextPage = ({
   const debouncedTrackingSearch = useCallback(
     debounce((searchTerm) => {
       if (searchTerm) {
-        rudder.track("rudder_search_photo", {
+        rudder.track(PHOTO_SEARCH_EVENT, {
           searchTerm,
         });
       }
@@ -141,8 +141,8 @@ const Home: NextPage = ({
             }}
             className={"absolute bottom-0 left-0 right-0 top-0 z-0"}
           ></div>
-          <div className="relative z-10 h-full w-full flex flex-col">
-            <div className="flex w-full flex-shrink-0 flex-col gap-3 mb-8">
+          <div className="relative z-10 flex h-full w-full flex-col">
+            <div className="mb-8 flex w-full flex-shrink-0 flex-col gap-3">
               <div className="mb-5 flex items-center gap-16">
                 <div>
                   <svg
@@ -188,7 +188,9 @@ const Home: NextPage = ({
               </div>
             </div>
             <div className="h-auto w-full flex-grow-0 rounded-lg bg-white/30 p-4 backdrop-blur-sm">
-              <h2 className="text-xl font-bold mb-5 text-white">All tracking events</h2>
+              <h2 className="mb-5 text-xl font-bold text-white">
+                All tracking events
+              </h2>
               <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400">
                   <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
@@ -255,10 +257,20 @@ const Home: NextPage = ({
                         scope="row"
                         className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
                       >
-                        rudder_photo_opend
+                        rudder_photo_opened
                       </th>
                       <td className="px-6 py-4">Photo opened</td>
                       <td className="px-6 py-4">Track photo opened event</td>
+                    </tr>
+                    <tr className="border-b bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+                      <th
+                        scope="row"
+                        className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                      >
+                        rudder_photo_searched
+                      </th>
+                      <td className="px-6 py-4">on change photo searched</td>
+                      <td className="px-6 py-4">Track photo searched event</td>
                     </tr>
                   </tbody>
                 </table>
@@ -290,7 +302,7 @@ const Home: NextPage = ({
             </Combobox>
           </form>
         </div>
-        <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4  p-8">
+        <div className="columns-1 gap-4 p-8 sm:columns-2 xl:columns-3  2xl:columns-4">
           {filteredImages.map(
             ({ id, public_id, format, blurDataUrl, ...rest }) => (
               <Link
