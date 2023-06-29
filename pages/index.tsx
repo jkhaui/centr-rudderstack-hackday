@@ -15,12 +15,11 @@ import {FloatingPopover} from "../components/FloatingPopover";
 
 const PAGE_LOAD_EVENT = 'Page loaded';
 const DEFAULT_ANALYTICS_PAYLOAD = {
-  firstName: 'Jordy',
   revenue: 30,
   currency: "USD",
   user_actual_id: 12345
 };
-
+c14d45b4-c4e0-4539-9e32-08561ef2fd21
 const Home: NextPage = ({ images, rudder }: { images: ImageProps[], rudder: any }) => {
   const router = useRouter()
   const { photoId } = router.query
@@ -34,6 +33,18 @@ const Home: NextPage = ({ images, rudder }: { images: ImageProps[], rudder: any 
 
     // setAnalyticsEvent(PAGE_LOAD_EVENT)
     // setAnalyticsPayload(xyz);
+
+    rudder.identify('c14d45b4-c4e0-4539-9e32-08561ef2fd21', {
+      firstName: 'Joshua',
+      lastName: 'Hayes',
+      email: 'joshua@somedomain.com'
+    });
+
+    rudder.track(
+        'Custom Test Event', {
+          ...analyticsPayload
+        }
+    )
 
     rudder.track(
         PAGE_LOAD_EVENT, {
