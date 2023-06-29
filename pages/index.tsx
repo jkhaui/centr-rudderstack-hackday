@@ -12,6 +12,8 @@ import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import { FloatingPopover } from "../components/FloatingPopover";
 import { Combobox } from "@headlessui/react";
 import Member from "../components/Member";
+import { ArrowDownIcon } from "@heroicons/react/20/solid";
+import { Transition } from "@headlessui/react";
 
 import debounce from "lodash.debounce";
 
@@ -176,7 +178,8 @@ const Home: NextPage = ({
               </div>
               <div>
                 <h1 className="mb-5 text-6xl font-bold text-white">
-                  Rudderstack anlaytics
+                  Photo gallery with{" "}
+                  <span className="text-[#F1EF17]">Rudderstack</span> anlaytics
                 </h1>
                 <h2 className="text-xl font-bold text-white">
                   Deliver trustworthy, real-time data
