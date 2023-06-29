@@ -34,7 +34,7 @@ const Home: NextPage = ({ images, rudder }: { images: ImageProps[], rudder: any 
     // setAnalyticsEvent(PAGE_LOAD_EVENT)
     // setAnalyticsPayload(xyz);
 
-    rudder.identify('c14d45b4-c4e0-4539-9e32-08561ef2fd21', {
+    rudder.identify('CC4FA6EE-0796-442A-883E-499AC6B495A0', {
       firstName: 'Joshua',
       lastName: 'Hayes',
       email: 'joshua@somedomain.com'
