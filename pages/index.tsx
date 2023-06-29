@@ -13,9 +13,8 @@ import type { ImageProps } from '../utils/types'
 import { useLastViewedPhoto } from '../utils/useLastViewedPhoto'
 import {FloatingPopover} from "../components/FloatingPopover";
 
-const PAGE_LOAD_EVENT = 'Page loaded';
+const PAGE_LOAD_EVENT = 'rudder_page_loaded';
 const DEFAULT_ANALYTICS_PAYLOAD = {
-  revenue: 30,
   currency: "USD",
   user_actual_id: 12345
 };
@@ -41,7 +40,7 @@ const Home: NextPage = ({ images, rudder }: { images: ImageProps[], rudder: any 
     });
 
     rudder.track(
-        'Custom Test Event', {
+        'rudder_custom_test_event', {
           ...analyticsPayload
         }
     )
