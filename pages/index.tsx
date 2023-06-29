@@ -116,7 +116,7 @@ const Home: NextPage = ({
             background: 'linear-gradient(270.03deg, rgba(23, 28, 33, 0) 0.03%, rgba(23, 28, 33, 0.63) 54.68%, rgba(23, 28, 33, 0.9) 99.97%)'
           }} className={'absolute top-0 right-0 left-0 bottom-0 z-0'}></div>
           <div className="relative z-10 w-1/2 h-full flex gap-3 flex-col">
-            <div className="flex items-baseline gap-8 mb-8">
+            <div className="flex items-center gap-4">
              <div>
                <svg
                    xmlns="http://www.w3.org/2000/svg"
@@ -133,8 +133,8 @@ const Home: NextPage = ({
                  />
                </svg>
              </div>
-               <Image src={'/rudderstack.jpeg'} width={32} height={32}  alt={'rudderstack'}/>
-              <h1 className="text-5xl text-white font-bold mb-5">Hackday</h1>
+               <Image src={'/rudderstack.svg'} width={300} height={32}  alt={'rudderstack'}/>
+              <h1 className="text-4xl text-white font-bold">Hackday</h1>
             </div>
             <div>
               <h1 className="text-6xl text-white font-bold mb-5">Rudderstack anlaytics</h1>
@@ -152,7 +152,7 @@ const Home: NextPage = ({
             <Link
               key={id}
               href={`/?photoId=${id}`}
-              as={`/p/${id}`}
+              // as={`/p/${id}`}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               shallow
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"

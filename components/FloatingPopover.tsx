@@ -3,7 +3,7 @@ import { useState } from "react";
 import { usePopper } from "react-popper";
 import { useAnalyticsStore } from "../stores";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import JSONPretty from "react-json-pretty";
 import JSONPrettyMon from "react-json-pretty/dist/monikai";
 import { Fragment } from "react";
@@ -48,7 +48,7 @@ export const FloatingPopover = ({ data, analyticsEvent, analyticsPayload }) => {
                                     {event.tag.label}
                                   </div>
                                 </div>
-                                <ChevronUpIcon
+                                <ChevronDownIcon
                                   className={`${
                                     open ? "rotate-180 transform" : ""
                                   } h-5 w-5 text-purple-500`}
