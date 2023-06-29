@@ -269,7 +269,7 @@ const Home: NextPage = ({
                       >
                         rudder_photo_searched
                       </th>
-                      <td className="px-6 py-4">on change photo searched</td>
+                      <td className="px-6 py-4">Photo searched on change</td>
                       <td className="px-6 py-4">Track photo searched event</td>
                     </tr>
                   </tbody>
