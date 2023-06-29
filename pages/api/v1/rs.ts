@@ -1,8 +1,7 @@
 const RudderAnalytics = require("@rudderstack/rudder-sdk-node");
 
-const Analytics = new RudderAnalytics('22RrHVNKf75qNriW5KJ6Aa2HNcmz', {
-    // TODO: replace with data plane URL hosted on Azure
-    // dataPlaneUrl: 'https://api.rudderstack.com',
+const Analytics = new RudderAnalytics('2RrdjdIIqqgWmUpPtboBM9iEN6L', {
+    dataPlaneUrl: 'https://weareloupyauxv.dataplane.rudderstack.com',
     logLevel: 'debug',
     gzip: false,
     flushInterval: 0,
