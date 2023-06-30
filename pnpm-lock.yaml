@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource/poppins':
+    specifier: ^5.0.3
+    version: 5.0.3
   '@headlessui/react':
     specifier: ^1.7.4
     version: 1.7.4(react-dom@18.2.0)(react@18.2.0)
@@ -62,6 +65,9 @@ dependencies:
   rudder-sdk-js:
     specifier: ^2.36.0
     version: 2.36.0
+  webfontloader:
+    specifier: ^1.6.28
+    version: 1.6.28
   zustand:
     specifier: ^4.3.8
     version: 4.3.8(react@18.2.0)
@@ -167,6 +173,10 @@ packages:
   /@eslint/js@8.43.0:
     resolution: {integrity: sha512-s2UHCoiXfxMvmfzqoN+vrQ84ahUSYde9qNO1MdxmoEhyHWsfmwOpFlwYV+ePJEVc7gFnATGUi376WowX1N7tFg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@fontsource/poppins@5.0.3:
+    resolution: {integrity: sha512-5lL2vmvmh4zbknTh1nVH9pTWyhYqAlYMHIAnkNhqo5qwMZGlr+coM1dtMwiQHRBgmHAl3ZvJ35Bj0s8cpmXZbg==}
     dev: false
 
   /@headlessui/react@1.7.4(react-dom@18.2.0)(react@18.2.0):
@@ -4762,6 +4772,10 @@ packages:
     dependencies:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
+    dev: false
+
+  /webfontloader@1.6.28:
+    resolution: {integrity: sha512-Egb0oFEga6f+nSgasH3E0M405Pzn6y3/9tOVanv/DLfa1YBIgcv90L18YyWnvXkRbIM17v5Kv6IT2N6g1x5tvQ==}
     dev: false
 
   /which-boxed-primitive@1.0.2:

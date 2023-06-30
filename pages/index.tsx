@@ -33,6 +33,27 @@ const Home: NextPage = ({
   images: ImageProps[];
   rudder: any;
 }) => {
+  useEffect(() => {
+    // if (typeof window !== 'undefined') {
+    //   WebFont.load({
+    //     google: {
+    //       families: ["Poppins"]
+    //     }
+    //   });
+    // }
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const WebFont = await import('webfontloader');
+      WebFont.load({
+        custom: {
+          families: ['Poppins'],
+        },
+      });
+    })();
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const router = useRouter();

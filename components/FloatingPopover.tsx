@@ -19,7 +19,7 @@ export const FloatingPopover = () => {
                         <Popover.Button
                             className={`
                 ${open ? "" : "text-opacity-90"}
-                group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-400 p-2 rounded-xl fixed text-md font-extrabold top-2 right-24 text-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-400 p-2 rounded-xl fixed text-md font-extrabold top-14 right-24 text-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                         >
                             <span dangerouslySetInnerHTML={{ __html: 'Centr <> Rudderstack DevTools'}} />
                         </Popover.Button>
@@ -32,7 +32,7 @@ export const FloatingPopover = () => {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                         >
-                            <Popover.Panel className="relative right-3/4 z-10 mt-6 w-screen max-h-[500px] max-w-xl px-4">
+                            <Popover.Panel className="relative right-3/4 z-10 mt-16 w-screen max-h-[500px] max-w-xl px-4">
                                 <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                     <div className="relative max-h-[500px] rounded-2xl overflow-auto flex flex-col gap-2 bg-white p-7 lg:grid-cols-2">
                                         {events &&

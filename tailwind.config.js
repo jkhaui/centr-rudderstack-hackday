@@ -13,6 +13,9 @@ module.exports = {
       'bg-red-500'
   ],
   theme: {
+    fontFamily: {
+      // sans: ['Poppins']
+    },
     extend: {
       boxShadow: {
         highlight: 'inset 0 0 0 1px rgba(255, 255, 255, 0.05)',
